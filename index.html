@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warren Buffett Investment Principles Explorer | KeepRule</title>
+    <meta name="description" content="Explore 20 key Warren Buffett investment principles with detailed explanations, real-world examples, and an interactive quiz. Master the Oracle of Omaha's wisdom.">
+    <meta name="keywords" content="Warren Buffett, investment principles, value investing, Berkshire Hathaway, investing wisdom, stock market, KeepRule">
+    <meta name="author" content="KeepRule">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://henu-wang.github.io/buffett-principles/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Warren Buffett Investment Principles Explorer">
+    <meta property="og:description" content="Explore 20 key Warren Buffett investment principles with detailed explanations, real-world examples, and interactive quiz mode.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://henu-wang.github.io/buffett-principles/">
+    <meta property="og:site_name" content="KeepRule - Buffett Principles">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Warren Buffett Investment Principles Explorer">
+    <meta name="twitter:description" content="Master the Oracle of Omaha's investment wisdom with 20 interactive principles.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 50:'#fefce8',100:'#fef9c3',200:'#fef08a',300:'#fde047',400:'#facc15',500:'#eab308',600:'#ca8a04',700:'#a16207',800:'#854d0e',900:'#713f12' },
+                        dark: { 50:'#f8fafc',100:'#1e293b',200:'#1a2332',300:'#151c28',400:'#111827',500:'#0d1117',600:'#0a0e14',700:'#070a0f',800:'#040609',900:'#020304' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #0d1117; color: #e2e8f0; }
+        h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; }
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(234,179,8,0.12); }
+        .gold-glow { text-shadow: 0 0 30px rgba(234,179,8,0.3); }
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .quiz-option { transition: all 0.3s; }
+        .quiz-option:hover { background: rgba(234,179,8,0.15); border-color: #eab308; }
+        .quiz-correct { background: rgba(34,197,94,0.2) !important; border-color: #22c55e !important; }
+        .quiz-wrong { background: rgba(239,68,68,0.2) !important; border-color: #ef4444 !important; }
+        .timeline-dot { width:16px; height:16px; border-radius:50%; background:#eab308; border:3px solid #1a2332; }
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:#0d1117; }
+        ::-webkit-scrollbar-thumb { background:#1e293b; border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:#334155; }
+        .category-btn.active { background: rgba(234,179,8,0.2); border-color: #eab308; color: #eab308; }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Warren Buffett Investment Principles Explorer",
+        "description": "Explore 20 key Warren Buffett investment principles with detailed explanations and real-world examples.",
+        "url": "https://henu-wang.github.io/buffett-principles/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "KeepRule",
+            "url": "https://keeprule.com"
+        }
+    }
+    </script>
+</head>
+<body class="min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark-500/90 backdrop-blur-md border-b border-gold-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="https://keeprule.com" class="flex items-center gap-2">
+                    <span class="text-gold-400 text-2xl font-display font-bold">KeepRule</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6 text-sm">
+                    <a href="https://keeprule.com/en/principles" class="text-gray-400 hover:text-gold-400 transition">Principles</a>
+                    <a href="https://keeprule.com/en/masters" class="text-gray-400 hover:text-gold-400 transition">Masters</a>
+                    <a href="https://keeprule.com/en/scenarios" class="text-gray-400 hover:text-gold-400 transition">Scenarios</a>
+                    <a href="https://keeprule.com/en/blog" class="text-gray-400 hover:text-gold-400 transition">Blog</a>
+                    <button onclick="scrollToQuiz()" class="bg-gold-600 hover:bg-gold-500 text-dark-500 px-4 py-2 rounded-lg font-medium transition">Quiz Mode</button>
+                </div>
+                <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden text-gray-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
+                <a href="https://keeprule.com/en/principles" class="block text-gray-400 hover:text-gold-400 py-1">Principles</a>
+                <a href="https://keeprule.com/en/masters" class="block text-gray-400 hover:text-gold-400 py-1">Masters</a>
+                <a href="https://keeprule.com/en/scenarios" class="block text-gray-400 hover:text-gold-400 py-1">Scenarios</a>
+                <a href="https://keeprule.com/en/blog" class="block text-gray-400 hover:text-gold-400 py-1">Blog</a>
+                <button onclick="scrollToQuiz()" class="bg-gold-600 text-dark-500 px-4 py-2 rounded-lg font-medium w-full">Quiz Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-4 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-gold-900/10 via-transparent to-transparent"></div>
+        <div class="relative max-w-4xl mx-auto">
+            <p class="text-gold-500 text-sm font-medium tracking-widest uppercase mb-4">The Oracle of Omaha's Wisdom</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6 gold-glow">
+                Warren Buffett<br>Investment Principles
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                Master the timeless investment wisdom of the world's greatest investor. Explore 20 core principles that built a $100B+ fortune.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#principles" class="bg-gold-600 hover:bg-gold-500 text-dark-500 px-6 py-3 rounded-lg font-semibold transition">Explore Principles</a>
+                <a href="https://keeprule.com/en/principles" class="border border-gold-700 text-gold-400 hover:bg-gold-900/30 px-6 py-3 rounded-lg font-semibold transition">View All on KeepRule</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search & Filter -->
+    <section id="principles" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+            <div class="relative flex-1 w-full">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input id="searchInput" type="text" placeholder="Search principles..." class="w-full bg-dark-300 border border-gray-700 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold-600 transition" oninput="filterPrinciples()">
+            </div>
+            <div class="flex flex-wrap gap-2" id="categoryFilters">
+                <button onclick="setCategory('all')" class="category-btn active border border-gray-700 px-4 py-2 rounded-lg text-sm transition" data-cat="all">All</button>
+                <button onclick="setCategory('value')" class="category-btn border border-gray-700 px-4 py-2 rounded-lg text-sm text-gray-400 transition" data-cat="value">Value Investing</button>
+                <button onclick="setCategory('risk')" class="category-btn border border-gray-700 px-4 py-2 rounded-lg text-sm text-gray-400 transition" data-cat="risk">Risk Management</button>
+                <button onclick="setCategory('quality')" class="category-btn border border-gray-700 px-4 py-2 rounded-lg text-sm text-gray-400 transition" data-cat="quality">Business Quality</button>
+                <button onclick="setCategory('psychology')" class="category-btn border border-gray-700 px-4 py-2 rounded-lg text-sm text-gray-400 transition" data-cat="psychology">Market Psychology</button>
+                <button onclick="setCategory('growth')" class="category-btn border border-gray-700 px-4 py-2 rounded-lg text-sm text-gray-400 transition" data-cat="growth">Personal Growth</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div id="principlesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        <p id="noResults" class="hidden text-center text-gray-500 py-12 text-lg">No principles match your search.</p>
+    </section>
+
+    <!-- Timeline -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-800">
+        <h2 class="text-3xl font-display font-bold text-white text-center mb-4">Investment Timeline</h2>
+        <p class="text-gray-400 text-center mb-12">Key decisions that shaped Buffett's legendary career</p>
+        <div class="relative">
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gold-900/40"></div>
+            <div id="timelineContainer" class="space-y-8"></div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quizSection" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-800">
+        <h2 class="text-3xl font-display font-bold text-white text-center mb-4">Quiz Mode</h2>
+        <p class="text-gray-400 text-center mb-8">Test your knowledge of Buffett's investment principles</p>
+        <div id="quizContainer" class="bg-dark-300 border border-gray-700 rounded-xl p-6 sm:p-8">
+            <div id="quizContent"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center border-t border-gray-800">
+        <h2 class="text-3xl font-display font-bold text-white mb-4">Go Deeper with KeepRule</h2>
+        <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Explore investment principles from Buffett and other legendary investors. Build your own investment framework with our curated wisdom library.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://keeprule.com/en/principles" class="bg-gold-600 hover:bg-gold-500 text-dark-500 px-6 py-3 rounded-lg font-semibold transition">Browse All Principles</a>
+            <a href="https://keeprule.com/en/masters" class="border border-gold-700 text-gold-400 hover:bg-gold-900/30 px-6 py-3 rounded-lg font-semibold transition">Meet the Masters</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <a href="https://keeprule.com" class="text-gold-400 font-display text-xl font-bold">KeepRule</a>
+                <p class="text-gray-500 text-sm mt-1">Curated investment wisdom from the world's greatest investors.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+                <a href="https://keeprule.com/en/principles" class="hover:text-gold-400 transition">Principles</a>
+                <a href="https://keeprule.com/en/masters" class="hover:text-gold-400 transition">Masters</a>
+                <a href="https://keeprule.com/en/scenarios" class="hover:text-gold-400 transition">Scenarios</a>
+                <a href="https://keeprule.com/en/blog" class="hover:text-gold-400 transition">Blog</a>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 text-xs mt-8">&copy; 2026 <a href="https://keeprule.com" class="hover:text-gold-500">KeepRule</a>. All rights reserved.</p>
+    </footer>
+
+<script>
+const principles = [
+    { id:1, cat:"value", title:"Circle of Competence", quote:"Know your circle of competence, and stick within it. The size of that circle is not very important; knowing its boundaries, however, is vital.", explanation:"Buffett insists on only investing in businesses he thoroughly understands. This means knowing how the company makes money, its competitive dynamics, and its future prospects.", example:"Buffett avoided tech stocks during the dot-com bubble because they were outside his circle. He later invested in Apple once he understood its consumer ecosystem and brand loyalty.", tips:["List industries you truly understand from work or life experience","Before investing, ask: Can I explain this business to a 10-year-old?","Expand your circle slowly through deliberate study, not FOMO"] },
+    { id:2, cat:"value", title:"Intrinsic Value", quote:"Price is what you pay. Value is what you get.", explanation:"Intrinsic value is the discounted value of all future cash flows a business will generate. Buffett calculates this to determine if a stock is trading below its true worth.", example:"When Buffett bought Coca-Cola in 1988, the stock had dropped 25% after the 1987 crash. He saw that the brand's global cash flow potential far exceeded its market price.", tips:["Learn to read financial statements and calculate free cash flow","Compare the stock price to your estimate of total future earnings","Always demand a gap between price and value before buying"] },
+    { id:3, cat:"value", title:"Margin of Safety", quote:"You don't try to buy businesses worth $83 million for $80 million. You leave yourself an enormous margin.", explanation:"Borrowed from Benjamin Graham, this principle means buying at a significant discount to intrinsic value. The margin protects against errors in analysis and unforeseen events.", example:"Buffett's 2008 investment in Goldman Sachs included preferred shares with a 10% dividend plus warrants - multiple layers of downside protection.", tips:["Target at least a 25-30% discount to your intrinsic value estimate","The less certain you are, the larger your margin should be","Margin of safety applies to position sizing too, not just price"] },
+    { id:4, cat:"value", title:"Long-Term Holding", quote:"Our favorite holding period is forever.", explanation:"Buffett believes that truly great businesses compound wealth over decades. Frequent trading generates taxes and fees that destroy returns.", example:"Buffett first bought Coca-Cola stock in 1988. Over 35+ years, his $1.3 billion investment has generated over $24 billion in dividends alone, with shares worth over $25 billion.", tips:["Think of buying stocks as buying a piece of a business, not a ticker","Only sell when the business fundamentals permanently deteriorate","Let compounding work - the real magic happens after year 10"] },
+    { id:5, cat:"risk", title:"Rule #1: Never Lose Money", quote:"Rule No. 1: Never lose money. Rule No. 2: Never forget rule No. 1.", explanation:"Capital preservation is paramount. Losses require disproportionately large gains to recover (a 50% loss needs a 100% gain). Buffett prioritizes avoiding permanent capital loss above all.", example:"Buffett avoided the 2000 dot-com crash entirely. While others lost 80-90%, Berkshire's book value actually grew during that period.", tips:["Differentiate between temporary price drops and permanent value loss","Avoid leverage - it turns temporary losses into permanent ones","If you're not sure about an investment, the answer is no"] },
+    { id:6, cat:"risk", title:"Be Fearful When Others Are Greedy", quote:"Be fearful when others are greedy, and greedy when others are fearful.", explanation:"Markets swing between extremes of fear and greed. The best opportunities come when everyone else is panicking, and the biggest risks emerge when everyone is euphoric.", example:"During the 2008 financial crisis, while others were selling in panic, Buffett invested $5 billion in Goldman Sachs and $3 billion in GE on extremely favorable terms.", tips:["Keep cash reserves to deploy during market panics","Create a watchlist of great companies and the prices you'd pay","When headlines are apocalyptic, start looking for opportunities"] },
+    { id:7, cat:"risk", title:"Avoid Debt & Leverage", quote:"I've seen more people fail because of liquor and leverage - leverage being borrowed money.", explanation:"Leverage amplifies both gains and losses. In a downturn, debt can force you to sell at the worst possible time, turning temporary paper losses into permanent real ones.", example:"Many hedge funds collapsed in 2008 due to leverage. Long-Term Capital Management, despite having Nobel Prize winners, nearly took down Wall Street through excessive leverage.", tips:["Never invest with borrowed money for speculative purposes","Ensure any debt in your portfolio companies is manageable","Keep personal finances conservative to invest with patience"] },
+    { id:8, cat:"risk", title:"Understand Risk vs. Uncertainty", quote:"Risk comes from not knowing what you're doing.", explanation:"Buffett defines risk not as volatility (price fluctuations) but as the probability of permanent capital loss. A stock dropping 30% isn't risky if the business is sound; an overpriced stock with shaky fundamentals is risky even if stable.", example:"Buffett bought Washington Post stock in 1973 when it dropped 50%. Academics said it was risky because of volatility, but Buffett knew the assets were worth 4x the market price.", tips:["Stop equating volatility with risk","Focus on business risk: competitive threats, debt levels, management quality","The biggest risk is paying too much for a mediocre business"] },
+    { id:9, cat:"quality", title:"Economic Moats", quote:"In business, I look for economic castles protected by unbreachable moats.", explanation:"A moat is a durable competitive advantage that protects a company's profits from competitors. Moats come from brand power, network effects, switching costs, cost advantages, or regulatory barriers.", example:"See's Candies has a powerful brand moat. Buffett bought it for $25 million in 1972; it has since generated over $2 billion in pre-tax earnings with minimal reinvestment needed.", tips:["Identify what stops competitors from stealing a company's customers","Look for companies that can raise prices without losing business","The best moats get wider over time, not narrower"] },
+    { id:10, cat:"quality", title:"Owner-Oriented Management", quote:"We look for three things: intelligence, energy, and integrity. If they don't have the last one, the first two will kill you.", explanation:"Buffett seeks managers who think like owners, allocate capital wisely, communicate honestly, and resist institutional pressures to grow for growth's sake.", example:"Buffett admired Tom Murphy of Capital Cities/ABC, who ran the company with exceptional capital allocation, buying back shares and making smart acquisitions rather than empire-building.", tips:["Read annual letters from management - are they honest about mistakes?","Check insider ownership - do managers have meaningful skin in the game?","Watch for excessive compensation relative to company performance"] },
+    { id:11, cat:"quality", title:"Simple & Understandable Businesses", quote:"I don't look to jump over 7-foot bars: I look around for 1-foot bars that I can step over.", explanation:"Complex businesses are harder to analyze and more likely to contain hidden risks. Buffett prefers businesses with straightforward economics that are predictable over long time horizons.", example:"Buffett's investment in Dairy Queen is a perfect example: people buy ice cream, the brand is loved, franchise economics are simple and profitable. No PhD required.", tips:["If you can't explain how a company makes money in two sentences, skip it","Complexity often hides problems rather than creating value","The best businesses are almost boring in their simplicity"] },
+    { id:12, cat:"quality", title:"Pricing Power", quote:"The single most important decision in evaluating a business is pricing power. If you've got the power to raise prices without losing business to a competitor, you've got a very good business.", explanation:"Companies that can raise prices ahead of inflation without losing customers have a form of economic moat that protects margins and drives compounding growth.", example:"Apple consistently charges premium prices for iPhones while competitors race to the bottom. This pricing power comes from ecosystem lock-in and brand prestige.", tips:["Test: could this company raise prices 10% without losing customers?","Pricing power often comes from brand, switching costs, or necessity","Companies without pricing power are at the mercy of inflation"] },
+    { id:13, cat:"psychology", title:"Mr. Market Metaphor", quote:"In the short run, the market is a voting machine but in the long run, it is a weighing machine.", explanation:"Imagine the market as an emotional business partner (Mr. Market) who offers to buy or sell shares daily at different prices. You're free to accept or ignore his offers. His mood swings are your opportunity.", example:"During COVID-19 in March 2020, Mr. Market offered many quality businesses at 30-50% discounts. Those who understood this metaphor bought great companies at bargain prices.", tips:["View market drops as Mr. Market making you irrational offers","You don't have to trade every day - wait for compelling offers","Let Mr. Market serve you, not guide you"] },
+    { id:14, cat:"psychology", title:"Avoid the Herd", quote:"Most people get interested in stocks when everyone else is. The time to get interested is when no one else is.", explanation:"Following the crowd leads to buying high and selling low. Independent thinking is essential for investment success. The best returns come from going against popular sentiment.", example:"In 2008, while institutional investors were dumping bank stocks, Buffett made his famous \"Buy American\" op-ed in the New York Times, investing billions in undervalued companies.", tips:["Develop your own investment thesis before reading others' opinions","The most popular stocks are usually the most overpriced","Comfort in investing is usually a bad sign - great deals feel scary"] },
+    { id:15, cat:"psychology", title:"Patience & Discipline", quote:"The stock market is a device for transferring money from the impatient to the patient.", explanation:"Buffett sometimes waits years between major investments. Discipline means only acting when conditions are strongly favorable and resisting the urge to do something just to feel active.", example:"Buffett sat on over $100 billion in cash for years before the pandemic, enduring criticism. When opportunities arose in 2020-2022, he deployed tens of billions strategically.", tips:["Inactivity can be intelligent behavior in investing","Set strict criteria and don't lower the bar when bored","Track your decision quality, not your activity level"] },
+    { id:16, cat:"psychology", title:"Emotional Control", quote:"If you cannot control your emotions, you cannot control your money.", explanation:"Fear and greed drive most poor investment decisions. Buffett cultivates emotional detachment from market movements, focusing on business fundamentals rather than stock prices.", example:"When Berkshire stock dropped 50% during the 2008 crisis, Buffett didn't panic. He focused on his businesses' operating results, not the stock ticker, and continued buying.", tips:["Create an investment policy statement before emotional situations arise","Avoid checking your portfolio daily - it amplifies emotional responses","Remember: a stock doesn't know you own it"] },
+    { id:17, cat:"growth", title:"Continuous Learning", quote:"I just sit in my office and read all day. That's how knowledge works. It builds up, like compound interest.", explanation:"Buffett reportedly reads 500 pages a day. He believes knowledge compounds just like money, and that a commitment to lifelong learning is the single best investment anyone can make.", example:"Buffett reads five newspapers, multiple trade journals, and hundreds of annual reports each year. At 90+, he continues to learn about new industries and adapt his thinking.", tips:["Read at least one annual report per week","Study both successes and failures - failures teach more","Build mental models from diverse fields: psychology, physics, history"] },
+    { id:18, cat:"growth", title:"Reputation is Priceless", quote:"It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you'll do things differently.", explanation:"Buffett considers integrity and reputation the most valuable assets in business. He insists that every Berkshire decision should be one he'd be comfortable reading about on the front page of the newspaper.", example:"When Salomon Brothers faced a Treasury bond scandal in 1991, Buffett stepped in as chairman and told employees: 'Lose money for the firm, I will be understanding. Lose a shred of reputation, I will be ruthless.'", tips:["Apply the 'newspaper test' to every business decision","Build relationships based on trust, not transactions","Short-term ethical shortcuts always cost more in the long run"] },
+    { id:19, cat:"growth", title:"Focus Over Diversification", quote:"Diversification is protection against ignorance. It makes little sense if you know what you are doing.", explanation:"Rather than spreading investments thinly, Buffett concentrates on his best ideas. His top 5 holdings typically represent over 70% of Berkshire's equity portfolio.", example:"Buffett's concentrated bet on Apple grew to represent over 40% of Berkshire's stock portfolio. This single conviction investment generated over $100 billion in gains.", tips:["Concentrate on your highest-conviction ideas","Own 5-10 stocks you understand deeply rather than 50 you don't","Diversification only makes sense when you lack deep knowledge"] },
+    { id:20, cat:"growth", title:"Think Independently", quote:"You are neither right nor wrong because the crowd disagrees with you. You are right because your data and reasoning are right.", explanation:"Buffett makes decisions based on his own analysis, not consensus opinion. He encourages investors to develop independent judgment and test ideas with facts and logic, not popularity.", example:"Buffett invested heavily in railroads (BNSF) when most investors thought railroads were a dying industry. His contrarian analysis of freight economics proved correct.", tips:["Always do your own research before making an investment decision","Seek out disconfirming evidence for your strongest beliefs","Being contrarian for its own sake is just as foolish as following the herd"] }
+];
+
+const timeline = [
+    { year:"1956", title:"Partnership Founded", desc:"At age 25, Buffett starts Buffett Partnership Ltd. with $105,100 from seven limited partners." },
+    { year:"1962", title:"Berkshire Hathaway", desc:"Begins buying shares of a struggling textile mill that would become his legendary holding company." },
+    { year:"1967", title:"Insurance Pivot", desc:"Acquires National Indemnity, entering the insurance business and unlocking the 'float' strategy." },
+    { year:"1972", title:"See's Candies", desc:"Pays $25 million for See's Candies. It becomes the prototype for his 'wonderful business at fair price' approach." },
+    { year:"1988", title:"Coca-Cola Investment", desc:"Invests $1.3 billion in Coca-Cola - his largest single stock bet at the time. Still holds it today." },
+    { year:"1998", title:"General Re", desc:"Acquires General Re for $22 billion, massively expanding Berkshire's insurance float." },
+    { year:"2008", title:"Financial Crisis Deals", desc:"Invests $5B in Goldman Sachs and $3B in GE on highly favorable terms during the crisis." },
+    { year:"2010", title:"BNSF Railroad", desc:"Completes $44 billion acquisition of Burlington Northern, calling it an 'all-in wager on the economic future of the United States.'" },
+    { year:"2016", title:"Apple Investment", desc:"Begins buying Apple shares. The position grows to become Berkshire's single largest and most profitable stock holding." },
+    { year:"2023", title:"$157B Cash Reserve", desc:"Berkshire accumulates record cash reserves, demonstrating patience as Buffett awaits the next great opportunity." }
+];
+
+const quizQuestions = [
+    { q:"What does Buffett consider the single most important factor in evaluating a business?", opts:["Revenue growth","Pricing power","Market share","Employee count"], ans:1 },
+    { q:"According to Buffett, when should you be greedy?", opts:["When the market is rising","When others are greedy","When others are fearful","During earnings season"], ans:2 },
+    { q:"What is Buffett's favorite holding period?", opts:["One year","Five years","Ten years","Forever"], ans:3 },
+    { q:"What does 'Mr. Market' represent in Buffett's philosophy?", opts:["The SEC","An emotional business partner","A stock broker","The Federal Reserve"], ans:1 },
+    { q:"How many pages does Buffett reportedly read per day?", opts:["100","250","500","1000"], ans:2 },
+    { q:"What did Buffett buy during the 2008 financial crisis?", opts:["Real estate","Goldman Sachs preferred shares","Bitcoin","Treasury bonds only"], ans:1 },
+    { q:"What is a 'moat' in Buffett's terminology?", opts:["A type of bond","A tax strategy","A durable competitive advantage","A diversification method"], ans:2 },
+    { q:"Which famous Buffett investment became his largest single stock holding?", opts:["Coca-Cola","Bank of America","Apple","Amazon"], ans:2 },
+    { q:"What does Buffett say risk comes from?", opts:["Market volatility","Not knowing what you're doing","High stock prices","Economic recessions"], ans:1 },
+    { q:"What year did Buffett start his first investment partnership?", opts:["1950","1956","1962","1970"], ans:1 }
+];
+
+const catLabels = { value:"Value Investing", risk:"Risk Management", quality:"Business Quality", psychology:"Market Psychology", growth:"Personal Growth" };
+const catColors = { value:"text-blue-400 bg-blue-900/30 border-blue-700", risk:"text-red-400 bg-red-900/30 border-red-700", quality:"text-emerald-400 bg-emerald-900/30 border-emerald-700", psychology:"text-purple-400 bg-purple-900/30 border-purple-700", growth:"text-amber-400 bg-amber-900/30 border-amber-700" };
+
+let currentCategory = 'all';
+let expandedCards = new Set();
+
+function renderPrinciples() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const grid = document.getElementById('principlesGrid');
+    const noResults = document.getElementById('noResults');
+    const filtered = principles.filter(p => {
+        const catMatch = currentCategory === 'all' || p.cat === currentCategory;
+        const searchMatch = !search || p.title.toLowerCase().includes(search) || p.quote.toLowerCase().includes(search) || p.explanation.toLowerCase().includes(search);
+        return catMatch && searchMatch;
+    });
+    if (filtered.length === 0) { grid.innerHTML = ''; noResults.classList.remove('hidden'); return; }
+    noResults.classList.add('hidden');
+    grid.innerHTML = filtered.map(p => {
+        const expanded = expandedCards.has(p.id);
+        return `<div class="card-hover bg-dark-300 border border-gray-700 rounded-xl p-6 fade-in cursor-pointer" onclick="toggleCard(${p.id})">
+            <div class="flex items-start justify-between mb-3">
+                <span class="text-xs font-medium px-2 py-1 rounded border ${catColors[p.cat]}">${catLabels[p.cat]}</span>
+                <span class="text-gray-600 text-sm font-mono">#${p.id}</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-white mb-3">${p.title}</h3>
+            <blockquote class="text-gold-400/90 italic text-sm border-l-2 border-gold-700 pl-3 mb-4">"${p.quote}"</blockquote>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">${p.explanation}</p>
+            ${expanded ? `<div class="mt-4 space-y-4 border-t border-gray-700 pt-4">
+                <div><h4 class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">Real-World Example</h4><p class="text-gray-400 text-sm">${p.example}</p></div>
+                <div><h4 class="text-gold-400 text-xs font-semibold uppercase tracking-wider mb-2">Application Tips</h4><ul class="space-y-1">${p.tips.map(t=>`<li class="text-gray-400 text-sm flex gap-2"><span class="text-gold-600 mt-0.5">&#9679;</span>${t}</li>`).join('')}</ul></div>
+                <a href="https://keeprule.com/en/principles" class="inline-block text-gold-500 text-xs hover:text-gold-400 transition mt-2">Explore more on KeepRule &rarr;</a>
+            </div>` : `<p class="text-gold-600 text-xs mt-2">Click to expand details &darr;</p>`}
+        </div>`;
+    }).join('');
+}
+
+function toggleCard(id) { expandedCards.has(id) ? expandedCards.delete(id) : expandedCards.add(id); renderPrinciples(); }
+function setCategory(cat) {
+    currentCategory = cat;
+    document.querySelectorAll('.category-btn').forEach(b => { b.classList.toggle('active', b.dataset.cat === cat); b.classList.toggle('text-gray-400', b.dataset.cat !== cat); });
+    renderPrinciples();
+}
+function filterPrinciples() { renderPrinciples(); }
+
+function renderTimeline() {
+    document.getElementById('timelineContainer').innerHTML = timeline.map((t, i) => `
+        <div class="relative flex items-start gap-4 md:gap-0 ${i%2===0?'md:flex-row':'md:flex-row-reverse'} fade-in">
+            <div class="hidden md:block md:w-1/2 ${i%2===0?'md:pr-12 md:text-right':'md:pl-12'}">
+                ${i%2===0?`<div class="bg-dark-300 border border-gray-700 rounded-lg p-4"><span class="text-gold-400 font-display font-bold text-lg">${t.year}</span><h4 class="text-white font-semibold mt-1">${t.title}</h4><p class="text-gray-400 text-sm mt-1">${t.desc}</p></div>`:''}
+            </div>
+            <div class="absolute left-4 md:left-1/2 -translate-x-1/2 mt-1.5 z-10"><div class="timeline-dot"></div></div>
+            <div class="md:w-1/2 ${i%2===0?'md:pl-12':'md:pr-12 md:text-right'} pl-10 md:pl-12">
+                ${i%2!==0||window.innerWidth<768?`<div class="bg-dark-300 border border-gray-700 rounded-lg p-4"><span class="text-gold-400 font-display font-bold text-lg">${t.year}</span><h4 class="text-white font-semibold mt-1">${t.title}</h4><p class="text-gray-400 text-sm mt-1">${t.desc}</p></div>`:''}
+            </div>
+        </div>
+    `).join('');
+}
+
+let quizIdx = 0, quizScore = 0, quizAnswered = false;
+function renderQuiz() {
+    if (quizIdx >= quizQuestions.length) {
+        document.getElementById('quizContent').innerHTML = `
+            <div class="text-center py-8">
+                <p class="text-5xl font-display font-bold text-gold-400 mb-4">${quizScore}/${quizQuestions.length}</p>
+                <p class="text-white text-xl mb-2">${quizScore>=8?'Outstanding! You truly understand Buffett.':quizScore>=5?'Good knowledge! Keep learning.':'Keep studying Buffett\'s principles!'}</p>
+                <p class="text-gray-400 mb-6">Deepen your understanding on <a href="https://keeprule.com/en/principles" class="text-gold-400 hover:text-gold-300 underline">KeepRule</a></p>
+                <button onclick="quizIdx=0;quizScore=0;renderQuiz()" class="bg-gold-600 hover:bg-gold-500 text-dark-500 px-6 py-3 rounded-lg font-semibold transition">Retry Quiz</button>
+            </div>`;
+        return;
+    }
+    const q = quizQuestions[quizIdx];
+    quizAnswered = false;
+    document.getElementById('quizContent').innerHTML = `
+        <div class="flex justify-between items-center mb-6">
+            <span class="text-gray-500 text-sm">Question ${quizIdx+1} of ${quizQuestions.length}</span>
+            <span class="text-gold-400 text-sm font-semibold">Score: ${quizScore}</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-1.5 mb-6"><div class="bg-gold-500 h-1.5 rounded-full transition-all" style="width:${(quizIdx/quizQuestions.length)*100}%"></div></div>
+        <h3 class="text-white text-lg font-semibold mb-6">${q.q}</h3>
+        <div class="space-y-3">${q.opts.map((o,i)=>`<button id="opt${i}" onclick="answerQuiz(${i},${q.ans})" class="quiz-option w-full text-left border border-gray-600 rounded-lg px-4 py-3 text-gray-300 hover:text-white">${o}</button>`).join('')}</div>`;
+}
+
+function answerQuiz(sel, correct) {
+    if (quizAnswered) return;
+    quizAnswered = true;
+    if (sel === correct) quizScore++;
+    document.getElementById('opt'+correct).classList.add('quiz-correct');
+    if (sel !== correct) document.getElementById('opt'+sel).classList.add('quiz-wrong');
+    setTimeout(() => { quizIdx++; renderQuiz(); }, 1200);
+}
+
+function scrollToQuiz() { document.getElementById('quizSection').scrollIntoView({ behavior:'smooth' }); }
+
+// Init
+renderPrinciples();
+renderTimeline();
+renderQuiz();
+window.addEventListener('resize', renderTimeline);
+</script>
+</body>
+</html>
